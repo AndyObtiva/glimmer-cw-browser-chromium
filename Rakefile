@@ -12,20 +12,20 @@ end
 require 'glimmer/launcher'
 require 'rake'
 
-require 'jeweler'
-Jeweler::Tasks.new do |gem|
+require 'juwelier'
+Juwelier::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = "glimmer-cw-browser-chromium"
   gem.homepage = "http://github.com/AndyObtiva/glimmer-cw-browser-chromium"
   gem.license = "MIT"
-  gem.summary = %Q{Browser - Glimmer Custom Widget (Chromium)}
-  gem.description = %Q{Browser - Glimmer Custom Widget (Chromium)}
+  gem.summary = %Q{Chromium Browser - Glimmer Custom Widget}
+  gem.description = %Q{Chromium Browser - Glimmer Custom Widget}
   gem.email = "andy.am@gmail.com"
   gem.authors = ["Andy Maleh"]
-  gem.files = Dir['VERSION', 'LICENSE.txt', 'lib/**/*']
+  gem.files = Dir['CHANGELOG.md', 'VERSION', 'LICENSE.txt', 'README.md', 'glimmer-cw-browser-chromium.gemspec', 'Downloadfile', 'lib/**/*', 'samples/**/*', 'vendor/**/*']
   # dependencies defined in Gemfile
 end
-Jeweler::RubygemsDotOrgTasks.new
+Juwelier::RubygemsDotOrgTasks.new
 
 require 'rspec/core'
 require 'rspec/core/rake_task'
