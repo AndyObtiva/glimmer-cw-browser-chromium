@@ -1,4 +1,4 @@
-# Chromium Browser 1.0.0
+# Chromium Browser 4.17.0.0
 ## [<img src="https://raw.githubusercontent.com/AndyObtiva/glimmer/master/images/glimmer-logo-hi-res.png" height=40 /> Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem)
 [![Gem Version](https://badge.fury.io/rb/glimmer-cw-video.svg)](http://badge.fury.io/rb/glimmer-cw-video)
 [![Join the chat at https://gitter.im/AndyObtiva/glimmer](https://badges.gitter.im/AndyObtiva/glimmer.svg)](https://gitter.im/AndyObtiva/glimmer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -11,10 +11,12 @@ In order for it to work however, it needs the [SWT Chromium support libraries](h
 
 The Chromium Browser [Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem) automates the inclusion of Chromium support libraries by relying on [bundler-download](https://github.com/AndyObtiva/bundler-download) gem (details under [setup](#setup))
 
+Note: Gem version numbers are in sync with the SWT Chromium library versions. The first two numbers represent the SWT Chromium version number. The last two numbers represent the minor and patch versions of the Chromium Browser Glimmer Custom Widget.
+
 ## Content
 
-- [SWT Chromium support libraries](https://download.eclipse.org/eclipse/downloads/drops4/R-4.17-202009021800/#SWTChromium): included in gem
-- [CEF](https://bitbucket.org/chromiumembedded/cef/src/master/) Binaries via a bundler-download [Downloadfile](Downloadfile): downloaded via bundler-download Bundler plugin upon `bundle install`
+- [SWT Chromium support libraries](https://download.eclipse.org/eclipse/downloads/drops4/R-4.17-202009021800/#SWTChromium) (v4.17-202009021800): included in gem
+- [CEF](https://bitbucket.org/chromiumembedded/cef/src/master/) Binaries (v0.4.0.202005172227) via a bundler-download [Downloadfile](Downloadfile): downloaded via bundler-download Bundler plugin upon `bundle install`
 
 ## Platforms
 
@@ -30,16 +32,18 @@ The Chromium Browser [Glimmer Custom Widget](https://github.com/AndyObtiva/glimm
 
 ## Setup
 
-The Chromium Browser gem includes downloads in a [Downloadfile](Downloadfile) and relies on the the [bundler-download](https://github.com/AndyObtiva/bundler-download) Bundler plugin to automatically download extra files at the end of `bundle install`
+The Chromium Browser gem includes downloads in a [Downloadfile](Downloadfile) and relies on the the [bundler-download](https://github.com/AndyObtiva/bundler-download) Bundler plugin to automatically download extra files.
 
 ### Glimmer Application
+
+#### Option 1: Pre-Download Binaries via Bundler Plugin
 
 Add the following to a Glimmer application `Gemfile`:
 
 ```ruby
 plugin 'bundler-download'
 
-gem 'glimmer-cw-browser-chromium', '~> 1.0.0'
+gem 'glimmer-cw-browser-chromium', '~> 4.17.0.0'
 ```
 
 Run this twice (the first time to install the `bundler-download` plugin and the second time to activate it and download extra files at the end):
@@ -50,18 +54,40 @@ jruby -S bundle
 
 (or just `bundle` if using RVM)
 
+#### Option 2: Download Binaries on First Use without Bundler Plugin
+
+This option is useful if you want to include the Chromium Browser as a passive available option without forcing apps to download large binary files if they do not need the feature.
+
+Add the following to a Glimmer application `Gemfile`:
+
+```ruby
+gem 'glimmer-cw-browser-chromium', '~> 4.17.0.0'
+```
+
+Run this:
+
+```
+jruby -S bundle
+```
+
+(or just `bundle` if using RVM)
+
+The first time you use the `browser(:chromium)` widget, extra file downloads are initiated to obtain the [CEF](https://bitbucket.org/chromiumembedded/cef/src/master/) Binaries (if not downloaded already).
+
 ### Glimmer Custom Shell gem or Glimmer Custom Widget gem
 
-When reusing in a Glimmer custom shell or custom widget, start by installing the [bundler-download](https://github.com/AndyObtiva/bundler-download) Bundler plugin manually:
+Both options 1 and 2 from [Glimmer Application](#glimmer-application) instructions are available for [custom shells](https://github.com/AndyObtiva/glimmer-dsl-swt#custom-shells) and [custom widgets](https://github.com/AndyObtiva/glimmer-dsl-swt#custom-widget) too.
+
+When reusing in a Glimmer custom shell only (not custom widget), start by installing the [bundler-download](https://github.com/AndyObtiva/bundler-download) Bundler plugin manually:
 
 ```
 bundle plugin install bundler-download
 ```
 
-Afterwards, add the following line to `Gemfile` (especially if you're using [Jeweler](https://github.com/technicalpickles/jeweler)/[Juwelier](https://github.com/flajann2/juwelier)):
+Afterwards, for both custom shells and custom widgets, add the following line to `Gemfile` (especially if you're using [Jeweler](https://github.com/technicalpickles/jeweler)/[Juwelier](https://github.com/flajann2/juwelier)):
 
 ```ruby
-gem 'glimmer-cw-browser-chromium', '~> 1.0.0'
+gem 'glimmer-cw-browser-chromium', '~> 4.17.0.0'
 ```
 
 Run this to install gem and download extra files at the end via [bundler-download](https://github.com/AndyObtiva/bundler-download):
@@ -75,7 +101,7 @@ jruby -S bundle
 If not using [Jeweler](https://github.com/technicalpickles/jeweler)/[Juwelier](https://github.com/flajann2/juwelier), add the following line to the gemspec:
 
 ```ruby
-s.add_runtime_dependency(%q<glimmer-cw-browser-chromium>.freeze, [">= 1.0.0", "< 2.0.0"])
+s.add_runtime_dependency(%q<glimmer-cw-browser-chromium>.freeze, [">= 4.17.0.0", "< 5.0.0.0"])
 ```
 
 Finally, just require the library in your code.
@@ -132,8 +158,8 @@ bundle download show
 This should print something like:
 
 ```
-Showing downloaded files for /Users/User/.rvm/gems/jruby-9.2.13.0@glimmer-cw-video/gems/glimmer-cw-browser-chromium-1.0.0/Downloadfile
-54070695 /Users/User/.rvm/gems/jruby-9.2.13.0@glimmer-cw-video/gems/glimmer-cw-browser-chromium-1.0.0/vendor/jars/mac/com.make.chromium.cef.cocoa.macosx.x86_64_0.4.0.202005172227.jar
+Showing downloaded files for /Users/User/.rvm/gems/jruby-9.2.13.0@glimmer-cw-video/gems/glimmer-cw-browser-chromium-4.17.0.0/Downloadfile
+54070695 /Users/User/.rvm/gems/jruby-9.2.13.0@glimmer-cw-video/gems/glimmer-cw-browser-chromium-4.17.0.0/vendor/jars/mac/com.make.chromium.cef.cocoa.macosx.x86_64_0.4.0.202005172227.jar
 ```
 
 To clear downloads, run:
