@@ -3,6 +3,7 @@
 ## 4.17.0.2
 
 - Fixed issue with requiring restart of app after auto-downloading binaries on :chrome style (restart no longer required)
+- Upgrade to bundler-download v1.3.0
 
 ## 4.17.0.1
 
