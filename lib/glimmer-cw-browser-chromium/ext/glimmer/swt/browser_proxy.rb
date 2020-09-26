@@ -26,8 +26,10 @@ module Glimmer
   module SWT
     class BrowserProxy < Glimmer::SWT::WidgetProxy    
       def initialize(*init_args, swt_widget: nil)
+        underscored_widget_name, parent, args = init_args
+        styles, extra_options = extract_args(underscored_widget_name, args)
+        require_jars if SWTProxy.include?(SWTProxy[:chromium], *styles)
         super
-        require_jars if has_style?(:chromium)
       end
       
       def require_jars
