@@ -1,5 +1,9 @@
 # Change Log
 
+## 4.17.0.1
+
+- Fixed issue with not detecting :chromium style when passed as an integer mixing other SWT styles
+
 ## 4.17.0.0
 
 - Synced version with SWT Chromium
