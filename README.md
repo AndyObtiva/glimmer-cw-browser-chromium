@@ -1,6 +1,6 @@
 # Chromium Browser 4.17.0.2
 ## [<img src="https://raw.githubusercontent.com/AndyObtiva/glimmer/master/images/glimmer-logo-hi-res.png" height=40 /> Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem)
-[![Gem Version](https://badge.fury.io/rb/glimmer-cw-video.svg)](http://badge.fury.io/rb/glimmer-cw-video)
+[![Gem Version](https://badge.fury.io/rb/glimmer-cw-browser-chromium.svg)](http://badge.fury.io/rb/glimmer-cw-browser-chromium)
 [![Join the chat at https://gitter.im/AndyObtiva/glimmer](https://badges.gitter.im/AndyObtiva/glimmer.svg)](https://gitter.im/AndyObtiva/glimmer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Chromium Browser is a [Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem) that brings Chromium support into the [Glimmer DSL for SWT](https://github.com/AndyObtiva/glimmer-dsl-swt)

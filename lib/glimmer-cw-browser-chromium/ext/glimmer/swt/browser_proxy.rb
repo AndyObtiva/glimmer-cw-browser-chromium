@@ -38,9 +38,10 @@ module Glimmer
         if jars.size < 2
           puts 'Please be patient while downloading files for Chromium Browser support.'
           require 'bundler-download'
-          Bundler::Download.new.exec('download', [])
+          Bundler::Download.new.exec('download', ['--keep-existing'])
         end
-        jars.each {|f| require f}      
+        jars = Dir.glob(File.expand_path("../../../../../../vendor/jars/#{Glimmer::Launcher.platform_os}/**/*.jar", __FILE__)).to_a
+        jars.each {|f| require f}
       end
     end
   end
