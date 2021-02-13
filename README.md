@@ -1,4 +1,4 @@
-# Chromium Browser 4.17.0.2
+# Chromium Browser 4.17.0.3
 ## [<img src="https://raw.githubusercontent.com/AndyObtiva/glimmer/master/images/glimmer-logo-hi-res.png" height=40 /> Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem)
 [![Gem Version](https://badge.fury.io/rb/glimmer-cw-browser-chromium.svg)](http://badge.fury.io/rb/glimmer-cw-browser-chromium)
 [![Join the chat at https://gitter.im/AndyObtiva/glimmer](https://badges.gitter.im/AndyObtiva/glimmer.svg)](https://gitter.im/AndyObtiva/glimmer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -43,7 +43,7 @@ Add the following to a Glimmer application `Gemfile`:
 ```ruby
 plugin 'bundler-download'
 
-gem 'glimmer-cw-browser-chromium', '~> 4.17.0.2'
+gem 'glimmer-cw-browser-chromium', '~> 4.17.0'
 ```
 
 Run this twice (the first time to install the `bundler-download` plugin and the second time to activate it and download extra files at the end):
@@ -61,7 +61,7 @@ This option is useful if you want to include the Chromium Browser as a passive a
 Add the following to a Glimmer application `Gemfile`:
 
 ```ruby
-gem 'glimmer-cw-browser-chromium', '~> 4.17.0.2'
+gem 'glimmer-cw-browser-chromium', '~> 4.17.0'
 ```
 
 Run this:
@@ -87,7 +87,7 @@ bundle plugin install bundler-download
 Afterwards, for both custom shells and custom widgets, add the following line to `Gemfile` (especially if you're using [Jeweler](https://github.com/technicalpickles/jeweler)/[Juwelier](https://github.com/flajann2/juwelier)):
 
 ```ruby
-gem 'glimmer-cw-browser-chromium', '~> 4.17.0.2'
+gem 'glimmer-cw-browser-chromium', '~> 4.17.0'
 ```
 
 Run this to install gem and download extra files at the end via [bundler-download](https://github.com/AndyObtiva/bundler-download):
@@ -101,7 +101,7 @@ jruby -S bundle
 If not using [Jeweler](https://github.com/technicalpickles/jeweler)/[Juwelier](https://github.com/flajann2/juwelier), add the following line to the gemspec:
 
 ```ruby
-s.add_runtime_dependency(%q<glimmer-cw-browser-chromium>.freeze, [">= 4.17.0.2", "< 5.0.0.0"])
+s.add_runtime_dependency(%q<glimmer-cw-browser-chromium>.freeze, ['~> 4.17.0'])
 ```
 
 Finally, just require the library in your code.
@@ -158,8 +158,8 @@ bundle download show
 This should print something like:
 
 ```
-Showing downloaded files for /Users/User/.rvm/gems/jruby-9.2.13.0@glimmer-cw-video/gems/glimmer-cw-browser-chromium-4.17.0.2/Downloadfile
-54070695 /Users/User/.rvm/gems/jruby-9.2.13.0@glimmer-cw-video/gems/glimmer-cw-browser-chromium-4.17.0.2/vendor/jars/mac/com.make.chromium.cef.cocoa.macosx.x86_64_0.4.0.202005172227.jar
+Showing downloaded files for /Users/User/.rvm/gems/jruby-9.2.13.0@glimmer-cw-video/gems/glimmer-cw-browser-chromium-4.17.0.3/Downloadfile
+54070695 /Users/User/.rvm/gems/jruby-9.2.13.0@glimmer-cw-video/gems/glimmer-cw-browser-chromium-4.17.0.3/vendor/jars/mac/com.make.chromium.cef.cocoa.macosx.x86_64_0.4.0.202005172227.jar
 ```
 
 To clear downloads, run:
