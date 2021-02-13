@@ -19,10 +19,11 @@ Juwelier::Tasks.new do |gem|
   gem.homepage = "http://github.com/AndyObtiva/glimmer-cw-browser-chromium"
   gem.license = "MIT"
   gem.summary = %Q{Chromium Browser - Glimmer Custom Widget}
-  gem.description = %Q{Chromium Browser - Glimmer Custom Widget}
+  gem.description = %Q{Chromium Browser - Glimmer Custom Widget - Enables using the :chromium SWT style with the `browser` widget (e.g. `browser(:chromium)`), embedding the Chromium browser engine instead of the default one.}
   gem.email = "andy.am@gmail.com"
   gem.authors = ["Andy Maleh"]
   gem.files = Dir['CHANGELOG.md', 'VERSION', 'LICENSE.txt', 'README.md', 'glimmer-cw-browser-chromium.gemspec', 'Downloadfile', 'lib/**/*', 'samples/**/*', 'vendor/**/*']
+  gem.post_install_message = "The glimmer-cw-browser-chromium gem includes a Downloadfile for extra binary downloads via the `bundler-download` plugin gem. \nMake sure to install the `bundler-download` plugin gem and run `bundle` again or `bundle download` in order to fetch the extra files needed for this gem to operate successfully."
   # dependencies defined in Gemfile
 end
 Juwelier::RubygemsDotOrgTasks.new
